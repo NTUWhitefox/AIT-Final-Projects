@@ -1,0 +1,173 @@
+{
+  "materials": [
+    {
+      "name": "Scooter_00",
+      "label": "Original polished steel",
+      "texture": "Scooter_00.png",
+      "metallic": 0.9399999976158142,
+      "smoothness": 0.7699999958276749,
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Scooter_01",
+      "label": "Original brushed aluminium",
+      "texture": "Scooter_01.png",
+      "metallic": 0.9200000166893005,
+      "smoothness": 0.6899999976158142,
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Scooter_02",
+      "label": "Original teal enamel paint",
+      "texture": "Scooter_02.png",
+      "metallic": 0.07999999821186066,
+      "smoothness": 0.699999988079071,
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Scooter_03",
+      "label": "Original black finished iron",
+      "texture": "Scooter_03.png",
+      "metallic": 0.6499999761581421,
+      "smoothness": 0.5200000107288361,
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Scooter_04",
+      "label": "Original fine-grained tyre rubber",
+      "texture": "Scooter_04.png",
+      "metallic": 0,
+      "smoothness": 0.2200000286102295,
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Scooter_05",
+      "label": "Original amber optical lens",
+      "texture": "Scooter_05.png",
+      "metallic": 0,
+      "smoothness": 0.9149999991059303,
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Scooter_06",
+      "label": "Original brass",
+      "texture": "Scooter_06.png",
+      "metallic": 0.8600000143051147,
+      "smoothness": 0.7299999892711639,
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Scooter_07",
+      "label": "Original clear optical lens",
+      "texture": "Scooter_07.png",
+      "metallic": 0,
+      "smoothness": 0.9450000002980232,
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Scooter_08",
+      "label": "Original warm white outdoor paint",
+      "texture": "Scooter_08.png",
+      "metallic": 0.029999999329447746,
+      "smoothness": 0.6299999952316284,
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Scooter_09",
+      "label": "Original black outdoor paint",
+      "texture": "Scooter_09.png",
+      "metallic": 0.029999999329447746,
+      "smoothness": 0.6299999952316284,
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Scooter_10",
+      "label": "Original red outdoor paint",
+      "texture": "Scooter_10.png",
+      "metallic": 0.029999999329447746,
+      "smoothness": 0.6299999952316284,
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Scooter_11",
+      "label": "Original red optical lens",
+      "texture": "Scooter_11.png",
+      "metallic": 0,
+      "smoothness": 0.9149999991059303,
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Scooter_12",
+      "label": "Original black grained saddle leather",
+      "texture": "Scooter_12.png",
+      "metallic": 0,
+      "smoothness": 0.4599999785423279,
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df661893547e45a44a61bf04ff181e2f, type: 3}
+  m_Name: FirstRideSettings
+  m_EditorClassIdentifier: Assembly-CSharp::AIT.Riding.RideTestSettings
+  profileVersion: 1
+  inputSource: 0
+  enableSetupShortcuts: 0
+  steeringDeadzone: 0.15
+  inputTimeoutSeconds: 0.25
+  wheelbase: 1.33
+  maximumSpeedKph: 40
+  overrideSectionSpeedCaps: 0
+  sectionSpeedCapsKph: {x: 20, y: 30, z: 40}
+  acceleration: 1.8
+  brakingDeceleration: 4
+  coastingDeceleration: 0.25
+  quadraticDrag: 0.003
+  lowSpeedSteeringDegrees: 38
+  highSpeedSteeringDegrees: 5
+  steeringRateDegreesPerSecond: 55
+  maximumYawDegreesPerSecond: 28
+  lowSpeedYawDegreesPerSecond: 75
+  steeringTransitionSpeedKph: 25
+  maximumReverseSpeedKph: 3
+  reverseAcceleration: 0.8
+  maximumLateralAcceleration: 3
+  seatedEyePosition: {x: 0, y: 1.35, z: -0.28}
+  desktopLookPitch: 18
+  desktopLookYaw: 0
+  comfortMode: 0
+  maximumBodyLeanDegrees: 18
+  cameraLeanGain: 0.2
+  maximumCameraLeanDegrees: 3
+  vignetteEnabled: 0
+  mirrorsEnabled: 1
+  mirrorUpdatesPerSecond: 30
+  mirrorResolution: 256
+  engineSoundEnabled: 1
+  telemetryHz: 20
+  recordFrameTimes: 1
+  showOperatorPanel: 1
