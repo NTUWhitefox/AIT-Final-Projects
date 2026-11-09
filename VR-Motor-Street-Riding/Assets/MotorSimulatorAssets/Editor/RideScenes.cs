@@ -9,6 +9,8 @@ namespace AIT.Riding.Editor
         public const string FirstRidePath = "Assets/Scenes/FirstRideTest.unity";
         public const string UrbanPreviewPath = "Assets/Scenes/UrbanVehiclePreview.unity";
         public const string CityCornersPath = "Assets/Scenes/CityCorners.unity";
+        public const string StreamingBlockoutPath = "Assets/Scenes/StreamingBlockout.unity";
+        public const string GridCityPath = "Assets/Scenes/GridCity.unity";
 
         [MenuItem("AIT/Riding/Open First Ride Scene")]
         public static void OpenFirstRide()
@@ -21,6 +23,14 @@ namespace AIT.Riding.Editor
         [MenuItem("AIT/Riding/Open City Corners")]
         public static void OpenCityCorners()
             => Open(CityCornersPath);
+
+        [MenuItem("AIT/Riding/Open Streaming Blockout")]
+        public static void OpenStreamingBlockout()
+            => Open(StreamingBlockoutPath);
+
+        [MenuItem("AIT/Riding/Open Grid City")]
+        public static void OpenGridCity()
+            => Open(GridCityPath);
 
         static void Open(string path)
         {

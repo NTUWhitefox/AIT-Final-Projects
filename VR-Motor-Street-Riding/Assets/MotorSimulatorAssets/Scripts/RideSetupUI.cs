@@ -156,7 +156,7 @@ namespace AIT.Riding
             {
                 AddButton("Start", "開始／繼續騎行", new Vector2(0, 100), new Vector2(650, 70), () => { startRequested = true; startRequestedAt = Time.realtimeSinceStartup; });
                 AddButton("Recenter", "以目前坐姿置中", new Vector2(0, 10), new Vector2(650, 65), () => { session.Calibrate(); PositionPanel(); });
-                AddButton("NextSection", "切換下一路段", new Vector2(0, -75), new Vector2(650, 65),
+                AddButton("NextSection", session.course.stages.Length==1?"回到路線起點":"切換下一路段", new Vector2(0, -75), new Vector2(650, 65),
                     () => { session.ResetToStage((session.StageIndex + 1) % session.course.stages.Length); PositionPanel(); BuildPage(); });
                 AddButton("Input", "輸入：" + session.Settings.inputSource, new Vector2(0, -160), new Vector2(650, 65), () =>
                 {

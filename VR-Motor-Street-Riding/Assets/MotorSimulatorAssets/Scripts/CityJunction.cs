@@ -11,12 +11,13 @@ namespace AIT.Riding
         public PreviewTrafficSignal northSouthSignal, eastWestSignal;
         CityTrafficVehicle occupant;
         float elapsed;
+        int pedestrianUsers;
         void OnEnable() { if (session) session.SessionEvent += OnSessionEvent; ApplySignals(); }
         void OnDisable() { if (session) session.SessionEvent -= OnSessionEvent; }
         void OnSessionEvent(string name, string detail)
-        { if (name == "stage_reset") { occupant = null; elapsed = 0; ApplySignals(); } }
+        { if (name == "stage_reset") { occupant = null; elapsed = 0; pedestrianUsers = 0; ApplySignals(); } }
         void Update()
-        { if (session && session.Running) { elapsed += Time.deltaTime; ApplySignals(); } }
+        { if (session && session.Running) { if (pedestrianUsers == 0) elapsed += Time.deltaTime; ApplySignals(); } }
         PreviewSignalColour Phase(bool northSouth)
         {
             float t = Mathf.Repeat(elapsed, 46);
@@ -25,6 +26,7 @@ namespace AIT.Riding
         }
         public bool TryReserve(CityTrafficVehicle car, float approachYaw, bool committed)
         {
+            if (pedestrianUsers > 0 && !committed) return false;
             if (occupant && occupant != car) return false;
             bool ns = Mathf.Abs(Mathf.Cos(approachYaw * Mathf.Deg2Rad)) > .5f;
             if (signalControlled && Phase(ns) != PreviewSignalColour.Green && !committed)
@@ -32,12 +34,25 @@ namespace AIT.Riding
             occupant = car; return true;
         }
         public void Release(CityTrafficVehicle car) { if (occupant == car) occupant = null; }
+        public bool TryBeginPedestrian()
+        {
+            if (occupant || !signalControlled || Phase(true) != PreviewSignalColour.Red || Phase(false) != PreviewSignalColour.Red) return false;
+            pedestrianUsers++; return true;
+        }
+        public void EndPedestrian() { pedestrianUsers = Mathf.Max(0, pedestrianUsers - 1); }
+        public bool PedestrianClearance => pedestrianUsers > 0;
         void ApplySignals()
         {
             if (!signalControlled) return;
+            Set(northSouthSignal, ReadSignal(true));
+            Set(eastWestSignal, ReadSignal(false));
+        }
+        public PreviewSignalColour ReadSignal(bool northSouth)
+        {
+            if (!signalControlled) return PreviewSignalColour.Green;
+            if (pedestrianUsers > 0) return PreviewSignalColour.Red;
             bool occupiedNS = occupant && Mathf.Abs(Mathf.Cos(occupant.ReservedApproachYaw * Mathf.Deg2Rad)) > .5f;
-            Set(northSouthSignal, occupant && !occupiedNS ? PreviewSignalColour.Red : Phase(true));
-            Set(eastWestSignal, occupant && occupiedNS ? PreviewSignalColour.Red : Phase(false));
+            return occupant && occupiedNS != northSouth ? PreviewSignalColour.Red : Phase(northSouth);
         }
         static void Set(PreviewTrafficSignal signal, PreviewSignalColour colour)
         { if (signal && signal.colour != colour) { signal.colour = colour; signal.Apply(); } }

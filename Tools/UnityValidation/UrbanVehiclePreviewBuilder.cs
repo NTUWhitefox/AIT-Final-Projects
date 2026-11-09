@@ -334,10 +334,10 @@ public static class UrbanVehiclePreviewBuilder
         var light=new GameObject("Preview sun").AddComponent<Light>();light.type=LightType.Directional;light.intensity=1.4f;light.transform.rotation=Quaternion.Euler(40,-35,0);light.shadows=LightShadows.Soft;
     }
     static void Ground() => Box("Ground",null,new Vector3(0,-.06f,0),new Vector3(40,.1f,40),Mat("Preview Ground",new Color(.21f,.23f,.24f)),false);
-    public static void Capture(string name,Vector3 position,Vector3 target,float fov)
+    public static void Capture(string name,Vector3 position,Vector3 target,float fov,float farClip=600)
     {
         var obj=new GameObject("Offline camera");var cam=obj.AddComponent<Camera>();cam.enabled=false;
-        obj.transform.position=position;obj.transform.LookAt(target);cam.fieldOfView=fov;cam.nearClipPlane=.04f;cam.farClipPlane=600;
+        obj.transform.position=position;obj.transform.LookAt(target);cam.fieldOfView=fov;cam.nearClipPlane=.04f;cam.farClipPlane=farClip;
         cam.clearFlags=CameraClearFlags.SolidColor;cam.backgroundColor=new Color(.56f,.65f,.72f);
         var data=cam.GetUniversalAdditionalCameraData();data.allowXRRendering=false;data.renderPostProcessing=false;
         var rt=new RenderTexture(1400,1000,24);var previous=RenderTexture.active;

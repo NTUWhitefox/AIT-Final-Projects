@@ -6,8 +6,110 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Trashbin/SampleScene.unity
     guid: 55daccc09a3b69647bbab145b54a3ab3
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockout.unity
+    guid: f5f966aad4fe0b848941d02615726990
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockoutChunks/B00_00.unity
+    guid: 621c440b49dbb52439d1f3900077d45a
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockoutChunks/B00_01.unity
+    guid: 040c33d07468f024499ee69e82f87f2e
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockoutChunks/B00_02.unity
+    guid: 411044a1bee642e44bb05b629c3df792
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockoutChunks/B00_03.unity
+    guid: 76f31d97d8dcee34faa78a7a2dba0dd3
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockoutChunks/B01_00.unity
+    guid: b9556fd6f65201145b079d952adfa868
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockoutChunks/B01_01.unity
+    guid: d2af73abb4f7c0344a34405de56a17af
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockoutChunks/B01_02.unity
+    guid: ef07f70b70c719443bb004c0dc5c1ac6
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockoutChunks/B01_03.unity
+    guid: 8ef7be88c17bdfb438d24da8e773b1c5
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockoutChunks/B02_00.unity
+    guid: 02587af37bd37904ca6e9c8f86148ebb
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockoutChunks/B02_01.unity
+    guid: 6f70e8d536779eb4784c84bb453152c9
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockoutChunks/B02_02.unity
+    guid: a22923b940538b34a825a1e5b8c01c03
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockoutChunks/B02_03.unity
+    guid: f60440b1771296c49ad4f79de1f6623d
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockoutChunks/B03_00.unity
+    guid: e7e25e23dec98254086f3454406113d8
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockoutChunks/B03_01.unity
+    guid: 330024ece5863f548b1d4ebcf9a74f78
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockoutChunks/B03_02.unity
+    guid: b9ad2acc03b947d4ca5ebff014c7a802
+  - enabled: 1
+    path: Assets/Scenes/StreamingBlockoutChunks/B03_03.unity
+    guid: 97c0db42b1146a645b1556dc212a23ed
+  - enabled: 1
+    path: Assets/Scenes/GridCity.unity
+    guid: 70e7da577db2e9a43907551c4abb2bfc
+  - enabled: 1
+    path: Assets/Scenes/GridCityChunks/G00_00.unity
+    guid: 8d5e9c390cc1e6042ab334c49aa75496
+  - enabled: 1
+    path: Assets/Scenes/GridCityChunks/G00_01.unity
+    guid: 1db68b16c40a8d447acdfdd69c0a0473
+  - enabled: 1
+    path: Assets/Scenes/GridCityChunks/G00_02.unity
+    guid: fd1c35993c62e5c43a3b8b04d0f53b0c
+  - enabled: 1
+    path: Assets/Scenes/GridCityChunks/G00_03.unity
+    guid: 7f8ca7f9d39702c49b0b5e88a6ac4079
+  - enabled: 1
+    path: Assets/Scenes/GridCityChunks/G01_00.unity
+    guid: 43367300f3c2f5b4a9f28b3b2ddb3657
+  - enabled: 1
+    path: Assets/Scenes/GridCityChunks/G01_01.unity
+    guid: 8df36657557c35042844c4aa124ae33e
+  - enabled: 1
+    path: Assets/Scenes/GridCityChunks/G01_02.unity
+    guid: a94594804f2222c41b7b314e804504fc
+  - enabled: 1
+    path: Assets/Scenes/GridCityChunks/G01_03.unity
+    guid: b5c744c3096cf1e4398e4ffeb575ddc7
+  - enabled: 1
+    path: Assets/Scenes/GridCityChunks/G02_00.unity
+    guid: b402baba2e56f254c821f503d6cdaf55
+  - enabled: 1
+    path: Assets/Scenes/GridCityChunks/G02_01.unity
+    guid: 15588d431099c3742a87efd182735eb5
+  - enabled: 1
+    path: Assets/Scenes/GridCityChunks/G02_02.unity
+    guid: 442c70bd73e09094c95fd94f9bde6838
+  - enabled: 1
+    path: Assets/Scenes/GridCityChunks/G02_03.unity
+    guid: 05af86c7425b53d4689958abb58b82f9
+  - enabled: 1
+    path: Assets/Scenes/GridCityChunks/G03_00.unity
+    guid: fe11583eb7ae7fd4dbace84d39ee839b
+  - enabled: 1
+    path: Assets/Scenes/GridCityChunks/G03_01.unity
+    guid: 47b410232271b4043bf8735c7b6dbdb5
+  - enabled: 1
+    path: Assets/Scenes/GridCityChunks/G03_02.unity
+    guid: ad6b8bc8a737a424aa0fc94a4cf36102
+  - enabled: 1
+    path: Assets/Scenes/GridCityChunks/G03_03.unity
+    guid: ade2318fd75862145840c51f952bfdbb
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}

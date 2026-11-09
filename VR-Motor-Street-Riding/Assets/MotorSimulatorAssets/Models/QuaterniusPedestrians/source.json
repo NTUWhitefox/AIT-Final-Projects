@@ -1,0 +1,12 @@
+{
+  "creator": "Quaternius",
+  "pack": "Ultimate Animated Character Pack",
+  "source": "https://quaternius.com/packs/ultimatedanimatedcharacter",
+  "license": "CC0 1.0",
+  "retrieved": "2026-11-08",
+  "sha256": {
+    "Casual_Male.fbx": "00489f0f7825ec0226c6f9097fdc6db8b25c5639bd6828f354c6d7c10c89c777",
+    "Casual_Female.fbx": "b1e5cb8e152bf30fa23956f47698b8f93c9532f416b29539e1297781fe12184f",
+    "Casual2_Male.fbx": "64ee3dff2eb56de489f09437cf95e255398846537b2ecc35141b8a4ec79e9962"
+  }
+}

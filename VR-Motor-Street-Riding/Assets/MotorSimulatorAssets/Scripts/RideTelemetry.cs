@@ -30,6 +30,8 @@ namespace AIT.Riding
             public string settingsJson;
             public RideTestStage[] stages;
             public Vector3[] streetSegmentEndpoints;
+            public string streamingWorldJson;
+            public string cityRoadNetworkJson;
         }
         [Serializable] sealed class SettingsSnapshot
         {
@@ -68,7 +70,9 @@ namespace AIT.Riding
                     displayMode = session.Display.Mode.ToString(),
                     inputDevices = session.input.DeviceDescription, headset=hmd.name, fixedStepSeconds = Time.fixedDeltaTime,
                     xrRefreshRate = refresh, settingsJson = JsonUtility.ToJson(session.Settings), stages = session.course.stages,
-                    streetSegmentEndpoints = session.course.streetSegmentEndpoints };
+                    streetSegmentEndpoints = session.course.streetSegmentEndpoints,
+                    streamingWorldJson = session.worldStreamer ? JsonUtility.ToJson(session.worldStreamer.world) : null,
+                    cityRoadNetworkJson = session.roadNetwork ? JsonUtility.ToJson(session.roadNetwork) : null };
                 File.WriteAllText(Path.Combine(OutputDirectory, "session.json"), JsonUtility.ToJson(meta, true));
                 session.SessionEvent += OnEvent;
                 OnEvent("session_open", "Initial metadata in session.json; later settings snapshots in events.csv");

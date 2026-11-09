@@ -15,6 +15,8 @@ namespace AIT.Riding
         public Transform vehicleRoot, vehicleVisual, riderLean, trackingOrigin;
         public Camera headCamera;
         public RideTelemetry telemetry;
+        public RideWorldStreamer worldStreamer;
+        public CityRoadNetwork roadNetwork;
         public RideTestSettings Settings { get; private set; }
         public RideDisplay Display { get; private set; }
         public RideSetupUI SetupUI { get; private set; }
@@ -37,7 +39,7 @@ namespace AIT.Riding
         public Quaternion CalibrationRotation => trackingOrigin.localRotation;
         Vector3 previousPosition;
         float previousYaw, inputSampleTime, oldFixedStep;
-        bool throttleReleased, focus = true;
+        bool throttleReleased, focus = true, waitingForWorld;
         RideInputSource previousSource;
 
         void Awake()
@@ -57,6 +59,8 @@ namespace AIT.Riding
         void Update()
         {
             CurrentInput = input.ReadInput();
+            if(waitingForWorld&&worldStreamer&&worldStreamer.ReadyToStart(Model.position))
+            {waitingForWorld=false;Status="附近街區已就緒；請放開油門與倒退鍵，再選開始。";}
             inputSampleTime = CurrentInput.sampleTime;
             var hmd = InputDevices.GetDeviceAtXRNode(XRNode.Head);
             HeadTracked = hmd.isValid && hmd.TryGetFeatureValue(CommonUsages.isTracked, out bool tracked) && tracked;
@@ -92,7 +96,8 @@ namespace AIT.Riding
                 Vector3 tangent = (end - stage.centreline[stage.centreline.Length - 2]).normalized;
                 if (Vector3.Dot(Model.position - end, tangent) >= -2) Pause("Section completed");
             }
-            if (Running && (Mathf.Abs(Model.position.x) > 500 || Mathf.Abs(Model.position.z) > 500))
+            if (Running && (worldStreamer ? !worldStreamer.Contains(Model.position) :
+                Mathf.Abs(Model.position.x) > 500 || Mathf.Abs(Model.position.z) > 500))
                 Pause("Test area boundary");
         }
 
@@ -105,7 +110,19 @@ namespace AIT.Riding
             { Pause("Input sample timed out"); return; }
             Vector3 before = Model.position;
             Model.Step(CurrentInput, Settings, StageSpeedCapKph, Time.fixedDeltaTime);
+            if(worldStreamer&&!worldStreamer.TravelReady(before,Model.position))
+            {
+                Model.position=before;Model.yaw=previousYaw;
+                Pause("前方街區尚未準備好；請等待後再選開始。");
+                Emit("streaming_wait","Movement held at the last ready position");return;
+            }
             Vector3 delta = Model.position - before;
+            if (roadNetwork && !roadNetwork.IsDrivable(Model.position, .3f))
+            {
+                Model.position = before; Model.yaw = previousYaw;
+                Pause("已碰到路緣；可重新開始後低速倒退移車。");
+                Emit("contact", "City road boundary; planar curb contact, not crash dynamics"); return;
+            }
             if (delta.sqrMagnitude > 0 && Physics.SphereCast(before + Vector3.up * 0.65f, 0.3f,
                 delta.normalized, out _, delta.magnitude + 0.03f, Physics.DefaultRaycastLayers,
                 QueryTriggerInteraction.Ignore))
@@ -140,6 +157,8 @@ namespace AIT.Riding
             if (Running) return true;
             if (Inspecting) return RejectStart("Leave exterior inspection before riding");
             if (!Display.Ready) return RejectStart(Display.Status);
+            if(worldStreamer&&!worldStreamer.ReadyToStart(Model.position))
+            {waitingForWorld=true;worldStreamer.RetryFailed();return RejectStart(worldStreamer.PreparationStatus);}
             if (Display.Mode == RideDisplayMode.Desktop && !focus) return RejectStart("Click the Game view to give desktop input focus");
             if (!CurrentInput.connected) return RejectStart("Selected input is not connected: " + Settings.inputSource);
             if (CurrentInput.stopHeld) return RejectStart("Release the STOP button (left Grip / L1 / Space)");
@@ -187,6 +206,7 @@ namespace AIT.Riding
             BodyLean = CameraLean = 0;
             vehicleRoot.SetPositionAndRotation(Model.position, Quaternion.Euler(0, Model.yaw, 0));
             Status = $"{stage.name}: paused; calibrate if needed, then start";
+            waitingForWorld=worldStreamer&&!worldStreamer.ReadyToStart(Model.position);
             throttleReleased = false;
             Emit("stage_reset", stage.name);
         }
