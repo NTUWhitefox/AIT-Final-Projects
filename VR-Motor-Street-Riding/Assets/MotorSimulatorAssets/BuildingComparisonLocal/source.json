@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-25",
+  "blender": "D:\\GameMakingTools\\blender-4.5.16-windows-x64\\blender-4.5.16-windows-x64\\blender.exe",
+  "importer_commit": "37ad42098d2b8b16b88695a9d7d117f33b57c4f3",
+  "archives": [
+    {
+      "name": "tai-wan-buildings-pack.zip",
+      "sha256": "4e98bdb8cec6bda9eb4c60b6206731bde6fd0e377fdb159cfb29897196f346e4"
+    },
+    {
+      "name": "lowpolyjapanesetownbuildings_fbx_v122.zip",
+      "sha256": "31808f8d3bd2bfee17f6b196391bbf5f10718cef127c6868bd7330721ffe6d1a"
+    }
+  ],
+  "pasha_url": "https://sketchfab.com/3d-models/tai-wan-buildings-pack-e40921ac50604b97b4d8f48cf13a25b3",
+  "pasha_license": "Sketchfab Free Standard; original ZIP supplied by user; not CC0",
+  "kobo_url": "https://www.fab.com/listings/72f9e3a7-9519-4494-86db-359b56635b52",
+  "kobo_license": "Fab Standard per bundled README; raw/modified asset files may not be put in public repositories",
+  "scope": "Local comparison only. Source textures/styles preserved; 3DS scale inferred as inches; no third-party Editor scripts or LODs imported."
+}

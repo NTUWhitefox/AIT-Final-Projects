@@ -1,0 +1,870 @@
+{
+  "product": "Low Poly Japanese Town Buildings – Apartments, Danchi, Shops, Offices and Stackable Background Building Modules",
+  "version": "1.0",
+  "format": "FBX",
+  "count_models": 35,
+  "count_colour_variants": 22,
+  "total_tris": 176288,
+  "grid_m": 0.5,
+  "exterior_only": true,
+  "palette": {
+    "png": "palette/palette32_tone.png",
+    "json": "palette/palette32.json",
+    "sha256": "89a57e9145af1eb412fecb1622abf428c769043052b865aaaca0e64a80518aa9"
+  },
+  "front": "Blender -Y = glTF/Godot +Z",
+  "created_with_ai": true,
+  "price_usd": 9.99,
+  "assets": [
+    {
+      "id": "tb_mansion_5f_01",
+      "name": "Apartment Building 5F (mansion, 3 units wide, balconies front, corridor back)",
+      "group": "Apartments",
+      "tris": 14280,
+      "bbox_min": [
+        -0.05,
+        -0.0508,
+        -0.3016
+      ],
+      "bbox_max": [
+        21.0016,
+        12.2,
+        18.3
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_mansion_5f_01.fbx"
+    },
+    {
+      "id": "tb_mansion_10f_01",
+      "name": "Apartment Building 10F (mansion, 4 units wide)",
+      "group": "Apartments",
+      "tris": 37144,
+      "bbox_min": [
+        -0.05,
+        -0.0508,
+        -0.3016
+      ],
+      "bbox_max": [
+        27.0016,
+        12.2,
+        32.8
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_mansion_10f_01.fbx"
+    },
+    {
+      "id": "tb_tower_mansion_24f_01",
+      "name": "Tower Apartment 24F (glass balconies, lobby, crown)",
+      "group": "Apartments",
+      "tris": 27260,
+      "bbox_min": [
+        -0.0024,
+        -0.0024,
+        -0.3016
+      ],
+      "bbox_max": [
+        24.0024,
+        24.0024,
+        81.75
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "Kobo_Glass",
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_tower_mansion_24f_01.fbx"
+    },
+    {
+      "id": "tb_danchi_5f_01",
+      "name": "Danchi Housing Block 5F (3 stair modules, building number on gable)",
+      "group": "Apartments",
+      "tris": 28460,
+      "bbox_min": [
+        -0.06,
+        -0.0608,
+        -0.3016
+      ],
+      "bbox_max": [
+        40.56,
+        9.9,
+        17.0016
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_danchi_5f_01.fbx"
+    },
+    {
+      "id": "tb_danchi_4f_01",
+      "name": "Danchi Housing Block 4F (2 stair modules)",
+      "group": "Apartments",
+      "tris": 15732,
+      "bbox_min": [
+        -0.06,
+        -0.0608,
+        -0.3016
+      ],
+      "bbox_max": [
+        27.06,
+        9.9,
+        14.2359
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_danchi_4f_01.fbx"
+    },
+    {
+      "id": "tb_wooden_apartment_2f_01",
+      "name": "Wooden Apartment 2F (outside steel stair, 6 rooms)",
+      "group": "Apartments",
+      "tris": 7630,
+      "bbox_min": [
+        0.0492,
+        -0.482,
+        -0.3008
+      ],
+      "bbox_max": [
+        12.395,
+        8.52,
+        7.56
+      ],
+      "materials": [
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_wooden_apartment_2f_01.fbx"
+    },
+    {
+      "id": "tb_pencil_building_6f_01",
+      "name": "Pencil Building 6F (narrow, vertical sign)",
+      "group": "Commercial",
+      "tris": 3454,
+      "bbox_min": [
+        -0.03,
+        -0.9,
+        -0.3008
+      ],
+      "bbox_max": [
+        5.06,
+        12.45,
+        21.65
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_pencil_building_6f_01.fbx"
+    },
+    {
+      "id": "tb_tenant_building_7f_01",
+      "name": "Tenant Building 7F (window letters, back steel stair)",
+      "group": "Commercial",
+      "tris": 6164,
+      "bbox_min": [
+        -0.03,
+        -1.1,
+        -0.3008
+      ],
+      "bbox_max": [
+        8.06,
+        16.1408,
+        25.45
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_tenant_building_7f_01.fbx"
+    },
+    {
+      "id": "tb_office_building_8f_01",
+      "name": "Office Building 8F (ribbon windows, entrance canopy)",
+      "group": "Commercial",
+      "tris": 7508,
+      "bbox_min": [
+        -0.06,
+        -1.6,
+        -0.3008
+      ],
+      "bbox_max": [
+        16.06,
+        14.25,
+        32.65
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_office_building_8f_01.fbx"
+    },
+    {
+      "id": "tb_shop_house_3f_01",
+      "name": "Shop House 3F (shop + home above, awning)",
+      "group": "Commercial",
+      "tris": 2772,
+      "bbox_min": [
+        -0.05,
+        -1.003,
+        -0.3008
+      ],
+      "bbox_max": [
+        6.955,
+        10.2,
+        11.8
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_shop_house_3f_01.fbx"
+    },
+    {
+      "id": "tb_kanban_shop_2f_01",
+      "name": "Kanban-Style Shop 2F (flat facade old shop)",
+      "group": "Commercial",
+      "tris": 2208,
+      "bbox_min": [
+        -0.49,
+        -1.003,
+        -0.3016
+      ],
+      "bbox_max": [
+        6.49,
+        10.295,
+        7.925
+      ],
+      "materials": [
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_kanban_shop_2f_01.fbx"
+    },
+    {
+      "id": "tb_warehouse_workshop_01",
+      "name": "Warehouse / Workshop (roll-up shutter, roof vents)",
+      "group": "Commercial",
+      "tris": 4564,
+      "bbox_min": [
+        -0.44,
+        -0.6,
+        -0.3008
+      ],
+      "bbox_max": [
+        12.44,
+        16.6,
+        8.05
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_warehouse_workshop_01.fbx"
+    },
+    {
+      "id": "tb_parking_garage_3f_01",
+      "name": "Parking Garage 3F (open decks, stair tower, entry barrier)",
+      "group": "Commercial",
+      "tris": 1904,
+      "bbox_min": [
+        -0.0032,
+        -0.3208,
+        -0.3
+      ],
+      "bbox_max": [
+        16.0032,
+        32.0032,
+        11.75
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_parking_garage_3f_01.fbx"
+    },
+    {
+      "id": "tb_house_tile_2f_01",
+      "name": "House 2F – tiled roof",
+      "group": "Houses",
+      "tris": 2952,
+      "bbox_min": [
+        0.2005,
+        0.48,
+        -0.3008
+      ],
+      "bbox_max": [
+        10.3995,
+        9.662,
+        10.2
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_house_tile_2f_01.fbx"
+    },
+    {
+      "id": "tb_house_modern_2f_01",
+      "name": "House 2F – modern box with solar panels",
+      "group": "Houses",
+      "tris": 1788,
+      "bbox_min": [
+        0.44,
+        0.0,
+        -0.3008
+      ],
+      "bbox_max": [
+        8.06,
+        10.455,
+        6.66
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_house_modern_2f_01.fbx"
+    },
+    {
+      "id": "tb_danchi_water_tower_01",
+      "name": "Danchi Water Tower",
+      "group": "Props",
+      "tris": 1888,
+      "bbox_min": [
+        -4.95,
+        -4.95,
+        0.0
+      ],
+      "bbox_max": [
+        4.95,
+        4.95,
+        27.0
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_danchi_water_tower_01.fbx"
+    },
+    {
+      "id": "tb_rooftop_billboard_01",
+      "name": "Rooftop Billboard (blank poster, lights)",
+      "group": "Props",
+      "tris": 472,
+      "bbox_min": [
+        -3.12,
+        -1.375,
+        0.0
+      ],
+      "bbox_max": [
+        3.12,
+        1.375,
+        4.8
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "Poster_Paper",
+        "palette32"
+      ],
+      "moving_parts": [],
+      "markers": [
+        "TextArea_01",
+        "Light_01",
+        "Light_02",
+        "Light_03"
+      ],
+      "file": "models/tb_rooftop_billboard_01.fbx"
+    },
+    {
+      "id": "tb_rooftop_water_tank_01",
+      "name": "Rooftop Water Tank",
+      "group": "Props",
+      "tris": 502,
+      "bbox_min": [
+        -0.92,
+        -1.045,
+        -0.0008
+      ],
+      "bbox_max": [
+        0.92,
+        1.045,
+        3.15
+      ],
+      "materials": [
+        "palette32"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_rooftop_water_tank_01.fbx"
+    },
+    {
+      "id": "tb_rooftop_ac_rack_01",
+      "name": "Rooftop Air-Conditioner Rack",
+      "group": "Props",
+      "tris": 598,
+      "bbox_min": [
+        -2.065,
+        -0.5,
+        0.0
+      ],
+      "bbox_max": [
+        2.065,
+        0.5,
+        0.97
+      ],
+      "materials": [
+        "palette32"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_rooftop_ac_rack_01.fbx"
+    },
+    {
+      "id": "tb_bicycle_shelter_01",
+      "name": "Bicycle Shelter with bike racks",
+      "group": "Props",
+      "tris": 602,
+      "bbox_min": [
+        -3.0,
+        -1.05,
+        -0.0008
+      ],
+      "bbox_max": [
+        3.0,
+        1.05,
+        2.3899
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32"
+      ],
+      "moving_parts": [],
+      "markers": [
+        "Light_01"
+      ],
+      "file": "models/tb_bicycle_shelter_01.fbx"
+    },
+    {
+      "id": "tb_garbage_station_01",
+      "name": "Garbage Station (lid opens)",
+      "group": "Props",
+      "tris": 1542,
+      "bbox_min": [
+        -1.05,
+        -0.55,
+        0.0
+      ],
+      "bbox_max": [
+        1.05,
+        0.55,
+        1.145
+      ],
+      "materials": [
+        "palette32"
+      ],
+      "moving_parts": [
+        "tb_garbage_station_01_lid"
+      ],
+      "markers": [],
+      "file": "models/tb_garbage_station_01.fbx"
+    },
+    {
+      "id": "tb_mansion_module_ground_01",
+      "name": "Mansion Module – ground floor bay 6 m",
+      "group": "Stackable modules",
+      "tris": 908,
+      "bbox_min": [
+        0.0,
+        -0.02,
+        -0.3
+      ],
+      "bbox_max": [
+        6.015,
+        12.02,
+        3.35
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_mansion_module_ground_01.fbx"
+    },
+    {
+      "id": "tb_mansion_module_floor_01",
+      "name": "Mansion Module – upper floor bay 6 m",
+      "group": "Stackable modules",
+      "tris": 908,
+      "bbox_min": [
+        0.0,
+        -0.02,
+        -0.22
+      ],
+      "bbox_max": [
+        6.015,
+        12.02,
+        2.9
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_mansion_module_floor_01.fbx"
+    },
+    {
+      "id": "tb_mansion_module_roof_01",
+      "name": "Mansion Module – roof bay 6 m",
+      "group": "Stackable modules",
+      "tris": 144,
+      "bbox_min": [
+        -0.0008,
+        -0.02,
+        -0.25
+      ],
+      "bbox_max": [
+        6.0008,
+        12.0,
+        0.75
+      ],
+      "materials": [
+        "palette32"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_mansion_module_roof_01.fbx"
+    },
+    {
+      "id": "tb_mansion_module_end_l_01",
+      "name": "Mansion Module – left end wall (upper floor)",
+      "group": "Stackable modules",
+      "tris": 102,
+      "bbox_min": [
+        -0.25,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        0.0,
+        12.0,
+        2.9
+      ],
+      "materials": [
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_mansion_module_end_l_01.fbx"
+    },
+    {
+      "id": "tb_mansion_module_end_r_01",
+      "name": "Mansion Module – right end wall (upper floor)",
+      "group": "Stackable modules",
+      "tris": 102,
+      "bbox_min": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        0.25,
+        12.0,
+        2.9
+      ],
+      "materials": [
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_mansion_module_end_r_01.fbx"
+    },
+    {
+      "id": "tb_mansion_module_end_l_ground_01",
+      "name": "Mansion Module – left end wall (ground floor)",
+      "group": "Stackable modules",
+      "tris": 102,
+      "bbox_min": [
+        -0.25,
+        0.0,
+        -0.3
+      ],
+      "bbox_max": [
+        0.0,
+        12.0,
+        3.35
+      ],
+      "materials": [
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_mansion_module_end_l_ground_01.fbx"
+    },
+    {
+      "id": "tb_mansion_module_end_r_ground_01",
+      "name": "Mansion Module – right end wall (ground floor)",
+      "group": "Stackable modules",
+      "tris": 102,
+      "bbox_min": [
+        0.0,
+        0.0,
+        -0.3
+      ],
+      "bbox_max": [
+        0.25,
+        12.0,
+        3.35
+      ],
+      "materials": [
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_mansion_module_end_r_ground_01.fbx"
+    },
+    {
+      "id": "tb_danchi_module_ground_01",
+      "name": "Danchi Module – ground floor stair module 13.5 m",
+      "group": "Stackable modules",
+      "tris": 2056,
+      "bbox_min": [
+        0.0,
+        -0.0608,
+        -0.3008
+      ],
+      "bbox_max": [
+        13.5008,
+        9.9,
+        3.3008
+      ],
+      "materials": [
+        "Kobo_Emissive",
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_danchi_module_ground_01.fbx"
+    },
+    {
+      "id": "tb_danchi_module_floor_01",
+      "name": "Danchi Module – upper floor stair module 13.5 m",
+      "group": "Stackable modules",
+      "tris": 1864,
+      "bbox_min": [
+        0.0,
+        -0.0608,
+        -1.3508
+      ],
+      "bbox_max": [
+        13.5008,
+        9.21,
+        2.7008
+      ],
+      "materials": [
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_danchi_module_floor_01.fbx"
+    },
+    {
+      "id": "tb_danchi_module_roof_01",
+      "name": "Danchi Module – roof 13.5 m",
+      "group": "Stackable modules",
+      "tris": 120,
+      "bbox_min": [
+        -0.02,
+        -0.02,
+        -0.0008
+      ],
+      "bbox_max": [
+        13.52,
+        9.02,
+        1.4
+      ],
+      "materials": [
+        "palette32"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_danchi_module_roof_01.fbx"
+    },
+    {
+      "id": "tb_danchi_module_end_l_01",
+      "name": "Danchi Module – left gable (upper floor)",
+      "group": "Stackable modules",
+      "tris": 114,
+      "bbox_min": [
+        -0.24,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        0.0,
+        9.0,
+        2.7
+      ],
+      "materials": [
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_danchi_module_end_l_01.fbx"
+    },
+    {
+      "id": "tb_danchi_module_end_r_01",
+      "name": "Danchi Module – right gable (upper floor)",
+      "group": "Stackable modules",
+      "tris": 114,
+      "bbox_min": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bbox_max": [
+        0.24,
+        9.0,
+        2.7
+      ],
+      "materials": [
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_danchi_module_end_r_01.fbx"
+    },
+    {
+      "id": "tb_danchi_module_end_l_ground_01",
+      "name": "Danchi Module – left gable (ground floor)",
+      "group": "Stackable modules",
+      "tris": 114,
+      "bbox_min": [
+        -0.24,
+        0.0,
+        -0.3
+      ],
+      "bbox_max": [
+        0.0,
+        9.0,
+        3.3
+      ],
+      "materials": [
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_danchi_module_end_l_ground_01.fbx"
+    },
+    {
+      "id": "tb_danchi_module_end_r_ground_01",
+      "name": "Danchi Module – right gable (ground floor)",
+      "group": "Stackable modules",
+      "tris": 114,
+      "bbox_min": [
+        0.0,
+        0.0,
+        -0.3
+      ],
+      "bbox_max": [
+        0.24,
+        9.0,
+        3.3
+      ],
+      "materials": [
+        "palette32",
+        "palette32_WindowGlow"
+      ],
+      "moving_parts": [],
+      "markers": [],
+      "file": "models/tb_danchi_module_end_r_ground_01.fbx"
+    }
+  ],
+  "colour_variants": [
+    "models/tb_danchi_5f_01_b.fbx",
+    "models/tb_danchi_5f_01_c.fbx",
+    "models/tb_house_modern_2f_01_b.fbx",
+    "models/tb_house_modern_2f_01_c.fbx",
+    "models/tb_house_tile_2f_01_b.fbx",
+    "models/tb_house_tile_2f_01_c.fbx",
+    "models/tb_kanban_shop_2f_01_b.fbx",
+    "models/tb_kanban_shop_2f_01_c.fbx",
+    "models/tb_mansion_10f_01_b.fbx",
+    "models/tb_mansion_10f_01_c.fbx",
+    "models/tb_mansion_5f_01_b.fbx",
+    "models/tb_mansion_5f_01_c.fbx",
+    "models/tb_office_building_8f_01_b.fbx",
+    "models/tb_office_building_8f_01_c.fbx",
+    "models/tb_pencil_building_6f_01_b.fbx",
+    "models/tb_pencil_building_6f_01_c.fbx",
+    "models/tb_shop_house_3f_01_b.fbx",
+    "models/tb_shop_house_3f_01_c.fbx",
+    "models/tb_tenant_building_7f_01_b.fbx",
+    "models/tb_tenant_building_7f_01_c.fbx",
+    "models/tb_wooden_apartment_2f_01_b.fbx",
+    "models/tb_wooden_apartment_2f_01_c.fbx"
+  ]
+}

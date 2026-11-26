@@ -59,7 +59,7 @@ def main():
             "Adult pedestrians use the free rigged bases with project clothing surfaces and resized silhouettes. "
             "UAL idle and walk were retargeted, grounded and baked with animation speed matched to path movement.\n"
             "- TDAL, user-supplied Scooter D FBX: [license agreement](https://www.tdal.tw/tw/webcontent/license_agreement). "
-            "Original geometry split by steering and axle role, with new flat materials and grips. The bike and scene derivatives stay in the local project.\n"
+            "Original geometry split by steering and axle role, with new flat materials and grips. The source license also applies to the derivatives.\n"
             "- The scene references the installed Kobo buildings under their bundled license.\n",
             encoding="utf-8",
         )

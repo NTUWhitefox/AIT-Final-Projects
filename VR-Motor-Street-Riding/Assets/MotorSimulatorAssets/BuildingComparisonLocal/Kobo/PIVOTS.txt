@@ -1,0 +1,14 @@
+Moving parts and markers (positions in metres, model space). Blender axes: X right, Y back, Z up; glTF / Godot: X right, Y up, Z front.
+Each moving part is a child object whose ORIGIN is the pivot, so you can rotate it directly.
+
+tb_rooftop_billboard_01  (Rooftop Billboard (blank poster, lights))
+  marker TextArea_01: Blender [-0.0, -0.39, 2.75]
+  marker Light_01: Blender [2.0, -1.225, 4.52]
+  marker Light_02: Blender [-0.0, -1.225, 4.52]
+  marker Light_03: Blender [-2.0, -1.225, 4.52]
+
+tb_bicycle_shelter_01  (Bicycle Shelter with bike racks)
+  marker Light_01: Blender [-0.0, -0.2, 2.25]
+
+tb_garbage_station_01  (Garbage Station (lid opens))
+  part   tb_garbage_station_01_lid: pivot Blender [0.0, 0.5, 1.12] / glTF [0.0, 1.12, -0.5] - rotate about X 0..75 deg (opens upward, hinge at the back)

@@ -1,0 +1,437 @@
+{
+ "name": "palette32",
+ "size": [
+  512,
+  256
+ ],
+ "grid": [
+  8,
+  4
+ ],
+ "material_name": "palette32",
+ "used": 28,
+ "note": "Slots never move. Row 1 = original 8 (same names), row 2-3 = new colors, empty slots (magenta) reserved for future colors. Use from the \u5996\u5200 pack on.",
+ "colors": [
+  {
+   "index": 0,
+   "name": "cream",
+   "hex": "#F3E9D6",
+   "rgb_bytes": [
+    243,
+    233,
+    214
+   ],
+   "uv_center": [
+    0.0625,
+    0.875
+   ],
+   "new": false
+  },
+  {
+   "index": 1,
+   "name": "teal",
+   "hex": "#4D9F94",
+   "rgb_bytes": [
+    77,
+    159,
+    148
+   ],
+   "uv_center": [
+    0.1875,
+    0.875
+   ],
+   "new": false
+  },
+  {
+   "index": 2,
+   "name": "light_ochre",
+   "hex": "#D8BD72",
+   "rgb_bytes": [
+    216,
+    189,
+    114
+   ],
+   "uv_center": [
+    0.3125,
+    0.875
+   ],
+   "new": false
+  },
+  {
+   "index": 3,
+   "name": "baked_brown",
+   "hex": "#95613B",
+   "rgb_bytes": [
+    149,
+    97,
+    59
+   ],
+   "uv_center": [
+    0.4375,
+    0.875
+   ],
+   "new": false
+  },
+  {
+   "index": 4,
+   "name": "coffee",
+   "hex": "#4B3025",
+   "rgb_bytes": [
+    75,
+    48,
+    37
+   ],
+   "uv_center": [
+    0.5625,
+    0.875
+   ],
+   "new": false
+  },
+  {
+   "index": 5,
+   "name": "wood",
+   "hex": "#B58A58",
+   "rgb_bytes": [
+    181,
+    138,
+    88
+   ],
+   "uv_center": [
+    0.6875,
+    0.875
+   ],
+   "new": false
+  },
+  {
+   "index": 6,
+   "name": "accent_red",
+   "hex": "#D9573B",
+   "rgb_bytes": [
+    217,
+    87,
+    59
+   ],
+   "uv_center": [
+    0.8125,
+    0.875
+   ],
+   "new": false
+  },
+  {
+   "index": 7,
+   "name": "metal_gray",
+   "hex": "#879599",
+   "rgb_bytes": [
+    135,
+    149,
+    153
+   ],
+   "uv_center": [
+    0.9375,
+    0.875
+   ],
+   "new": false
+  },
+  {
+   "index": 8,
+   "name": "moss",
+   "hex": "#5C6A4C",
+   "rgb_bytes": [
+    92,
+    106,
+    76
+   ],
+   "uv_center": [
+    0.0625,
+    0.625
+   ],
+   "new": true
+  },
+  {
+   "index": 9,
+   "name": "leaf_green",
+   "hex": "#7FA05A",
+   "rgb_bytes": [
+    127,
+    160,
+    90
+   ],
+   "uv_center": [
+    0.1875,
+    0.625
+   ],
+   "new": true
+  },
+  {
+   "index": 10,
+   "name": "indigo",
+   "hex": "#3E5277",
+   "rgb_bytes": [
+    62,
+    82,
+    119
+   ],
+   "uv_center": [
+    0.3125,
+    0.625
+   ],
+   "new": true
+  },
+  {
+   "index": 11,
+   "name": "plum",
+   "hex": "#6B4A6B",
+   "rgb_bytes": [
+    107,
+    74,
+    107
+   ],
+   "uv_center": [
+    0.4375,
+    0.625
+   ],
+   "new": true
+  },
+  {
+   "index": 12,
+   "name": "sakura",
+   "hex": "#E8A9A3",
+   "rgb_bytes": [
+    232,
+    169,
+    163
+   ],
+   "uv_center": [
+    0.5625,
+    0.625
+   ],
+   "new": true
+  },
+  {
+   "index": 13,
+   "name": "skin",
+   "hex": "#E2B48C",
+   "rgb_bytes": [
+    226,
+    180,
+    140
+   ],
+   "uv_center": [
+    0.6875,
+    0.625
+   ],
+   "new": true
+  },
+  {
+   "index": 14,
+   "name": "stone",
+   "hex": "#A8A197",
+   "rgb_bytes": [
+    168,
+    161,
+    151
+   ],
+   "uv_center": [
+    0.8125,
+    0.625
+   ],
+   "new": true
+  },
+  {
+   "index": 15,
+   "name": "iron",
+   "hex": "#34353A",
+   "rgb_bytes": [
+    52,
+    53,
+    58
+   ],
+   "uv_center": [
+    0.9375,
+    0.625
+   ],
+   "new": true
+  },
+  {
+   "index": 16,
+   "name": "white",
+   "hex": "#F8F8F4",
+   "rgb_bytes": [
+    248,
+    248,
+    244
+   ],
+   "uv_center": [
+    0.0625,
+    0.375
+   ],
+   "new": true
+  },
+  {
+   "index": 17,
+   "name": "gold",
+   "hex": "#D9A62E",
+   "rgb_bytes": [
+    217,
+    166,
+    46
+   ],
+   "uv_center": [
+    0.1875,
+    0.375
+   ],
+   "new": true
+  },
+  {
+   "index": 18,
+   "name": "mint",
+   "hex": "#96CCBA",
+   "rgb_bytes": [
+    150,
+    204,
+    186
+   ],
+   "uv_center": [
+    0.3125,
+    0.375
+   ],
+   "new": true
+  },
+  {
+   "index": 19,
+   "name": "pine",
+   "hex": "#2E6B4B",
+   "rgb_bytes": [
+    46,
+    107,
+    75
+   ],
+   "uv_center": [
+    0.4375,
+    0.375
+   ],
+   "new": true
+  },
+  {
+   "index": 20,
+   "name": "salmon",
+   "hex": "#EE8450",
+   "rgb_bytes": [
+    238,
+    132,
+    80
+   ],
+   "uv_center": [
+    0.5625,
+    0.375
+   ],
+   "new": true
+  },
+  {
+   "index": 21,
+   "name": "tuna",
+   "hex": "#B23A3F",
+   "rgb_bytes": [
+    178,
+    58,
+    63
+   ],
+   "uv_center": [
+    0.6875,
+    0.375
+   ],
+   "new": true
+  },
+  {
+   "index": 22,
+   "name": "nori",
+   "hex": "#1F2B24",
+   "rgb_bytes": [
+    31,
+    43,
+    36
+   ],
+   "uv_center": [
+    0.8125,
+    0.375
+   ],
+   "new": true
+  },
+  {
+   "index": 23,
+   "name": "cyan",
+   "hex": "#5BB8D6",
+   "rgb_bytes": [
+    91,
+    184,
+    214
+   ],
+   "uv_center": [
+    0.9375,
+    0.375
+   ],
+   "new": true
+  },
+  {
+   "index": 24,
+   "name": "skin_shade",
+   "hex": "#C48E6A",
+   "rgb_bytes": [
+    196,
+    142,
+    106
+   ],
+   "uv_center": [
+    0.0625,
+    0.125
+   ],
+   "new": true
+  },
+  {
+   "index": 25,
+   "name": "kon_dark",
+   "hex": "#2B3448",
+   "rgb_bytes": [
+    43,
+    52,
+    72
+   ],
+   "uv_center": [
+    0.1875,
+    0.125
+   ],
+   "new": true
+  },
+  {
+   "index": 26,
+   "name": "old_gold",
+   "hex": "#9A8452",
+   "rgb_bytes": [
+    154,
+    132,
+    82
+   ],
+   "uv_center": [
+    0.3125,
+    0.125
+   ],
+   "new": true
+  },
+  {
+   "index": 27,
+   "name": "slate",
+   "hex": "#5E5B57",
+   "rgb_bytes": [
+    94,
+    91,
+    87
+   ],
+   "uv_center": [
+    0.4375,
+    0.125
+   ],
+   "new": true,
+   "note": "2026-11-12 yokai vol.5 nurikabe: dark weathered stone/plaster (light greys wash out in Godot)"
+  }
+ ]
+}

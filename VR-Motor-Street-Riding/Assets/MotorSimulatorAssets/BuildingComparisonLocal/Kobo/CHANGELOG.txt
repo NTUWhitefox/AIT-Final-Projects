@@ -1,0 +1,5 @@
+2026-11-12 1.0: first release (35 models + 22 colour variants, LOD1/LOD2 for 41 heavier models in LODs/).
+2026-11-13  v1.1  FBX: root objects re-exported with a clean transform (rotation 0 / scale 1 in Unity and Unreal). Earlier FBX files carried an extra 90/180 deg X rotation on the root after the collision update; the models looked right but rotated wrongly when you reset the transform. Geometry, pivots, moving parts and UCX collision are unchanged.
+2026-11-13  v1.2  Floating-part fix (rule 107): the modern house downpipe now sits against the wall (all colour variants and LODs). Same change in GLB, FBX, .blend, LODs and the demo scene; nothing else changed.
+2026-11-18  v1.2.1  README: added the buyer licence section and the one-zip-per-format download note. No model changes.
+2026-11-23  v1.2.2  Unity ready (tested in Unity 6.6, URP / Built-in): added the import helper Unity/Editor/KoboFbxPostprocessor.cs (palette textures, glow, glass, UCX_ -> convex Mesh Colliders, looping clips) and a Unity section in the README. Copy the whole pack folder into Assets/. FBX models unchanged.

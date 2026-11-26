@@ -211,7 +211,7 @@ Desktop 增量驗證：`python Tools/check_desktop_look.py` 在忽略的獨立�
 
 目前比較場景的建築輸出：Pasha 放置 20 組，14,856 個可見三角形、29 個共用材質；Kobo 放置 36 棟，207,672 個可見三角形、3 個共用材質。車、人、道路另計，數字不是總可見成本或 VR 效能驗收，也不能單憑面數判斷哪套較快。
 
-素材與場景位於本機 `Assets/MotorSimulatorAssets/BuildingComparisonLocal/`；`Prefabs/Pasha/`、`Prefabs/Kobo/` 可供自行佈置，`Scenes/` 為本次比較場景。Kobo 附帶 README 要求原始及修改後素材不得放進公開 repository；此資料夾及其 `.meta` 已加入本機 `.git/info/exclude`，Pasha 也一併保留本機。來源、原檔 SHA256 和轉換版本在該資料夾的 `source.json`。原始壓縮檔留在 `tempSpace/`，解壓與中間成果位於 `Personal/BuildingComparison/`，不納入 git。
+素材與場景位於 `Assets/MotorSimulatorAssets/BuildingComparisonLocal/`，連同 `.meta` 隨私有研究專案同步。`Prefabs/Pasha/`、`Prefabs/Kobo/` 可供自行佈置，`Scenes/` 為比較場景。來源、原檔 SHA256 和轉換版本在該資料夾的 `source.json`，Kobo 的授權摘要隨附於 `Kobo/README.md`。原始壓縮檔留在 `tempSpace/`，解壓與中間成果位於 `Personal/BuildingComparison/`，不納入 git。
 
 重建：`python Tools/build_streetscape_comparison.py --check --write-back`。需保留下載的兩個 ZIP，以及目前指定的 Blender portable；3DS 匯入器只載入離線程序，不修改使用者的 Blender 設定。腳本會重建上述本機產物；欲手動編修比較場景，請先另存為自己的場景。
 
@@ -259,7 +259,7 @@ NPC 騎士先用已入庫、可擺姿的 Quaternius `Casual2_Male`。第一版�
 
 **通勤車型更新（2026-11-26）**。Kobo Traffic Preview 的自車與 NPC 已換成使用者提供的 TDAL Scooter D，沿用 Kobo 配色，依網格的連通部件把車殼、把手和前叉、前後輪拆開。自車改用車型對應的儀表、握把位置與鏡面，NPC 騎士重新貼合踏板與座墊。模型長 1.90 m、含鏡寬 0.77 m、軸距 1.35 m，簡化機械細節後有 48,317 個三角形。這些是素材尺寸。先前的復古速克達仍可在原 Kobo 比較場景看到。TDAL 變體保留在本機素材目錄。 [台灣山葉勁豪 125 外形與規格](https://www.yamaha-motor.com.tw/news/news-202508-axis-z) · [TDAL 授權協議](https://www.tdal.tw/tw/webcontent/license_agreement)
 
-場景及改製素材位於 `Assets/MotorSimulatorAssets/BuildingComparisonLocal/TrafficPreview/`，沿用本機素材排除規則。原 Kobo 比較場景可作對照。可用 `python -B Tools/build_kobo_traffic_preview.py --write-back` 從已取得的底模重建樣板，產生器只在 `Tools/`。Unity 截圖及 Play 驗證報告在 `Personal/KoboTraffic/`，驗證包括從選單開始、實際騎行 100 m、倒退停止、三輛 NPC 車輛沿路線行進與車輪轉動。實機 VR 效能待另測。
+場景及改製素材位於 `Assets/MotorSimulatorAssets/BuildingComparisonLocal/TrafficPreview/`，素材來源見同資料夾的 `Sources.md`。原 Kobo 比較場景可作對照。可用 `python -B Tools/build_kobo_traffic_preview.py --write-back` 從已取得的底模重建樣板，產生器只在 `Tools/`。Unity 截圖及 Play 驗證報告在 `Personal/KoboTraffic/`，驗證包括從選單開始、實際騎行 100 m、倒退停止、三輛 NPC 車輛沿路線行進與車輪轉動。實機 VR 效能待另測。
 
 比例與車殼修訂以實車軸距、座墊和騎姿為基準。勁豪 125 軸距 1.275 m、座高 0.755 m，PCX 姿勢圖的軸距 1.315 m、座高 0.764 m。樣板速克達軸距 1.33 m。將 NPC 騎士骨架縮約 9%，收窄肩肘與安全帽，重新配合座墊、握把和踏板，坐姿的帽頂距路面 1.74 m。參考來源為 [台灣山葉勁豪 125 規格](https://www.yamaha-motor.com.tw/news/news-202508-axis-z)、[山葉在台開發部門的雙載照片](https://www.ymrt.com.tw/en/news/news_01.aspx?AnnouceSeq=1)與 [Honda PCX 側視騎姿圖](https://www.honda.co.jp/factbook/motor/PCX/202012/P15.pdf)。
 

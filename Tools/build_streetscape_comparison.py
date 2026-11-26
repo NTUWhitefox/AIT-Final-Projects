@@ -1,7 +1,7 @@
 """Prepare supplied building archives and author comparison scenes in an ignored Unity clone.
 
 python Tools/build_streetscape_comparison.py --write-back
-Native models, derivatives and local scenes are excluded from git per source licences.
+Original downloads and intermediate authoring files remain outside version control.
 """
 import argparse
 import hashlib
@@ -65,12 +65,6 @@ def main():
     parser.add_argument("--blender", type=Path, default=BLENDER)
     args = parser.parse_args()
     BASE.mkdir(parents=True, exist_ok=True)
-    exclude = ROOT / ".git/info/exclude"
-    body = exclude.read_text(encoding="utf-8-sig")
-    for rule in ("/VR-Motor-Street-Riding/" + LOCAL.as_posix() + "/", "/VR-Motor-Street-Riding/" + LOCAL.as_posix() + ".meta"):
-        if rule not in body.splitlines():
-            body += "\n" + rule + "\n"
-    exclude.write_text(body, encoding="utf-8")
     if not args.write_back_only:
         archives = [ROOT / "tempSpace/tai-wan-buildings-pack.zip", *sorted((ROOT / "tempSpace").glob("lowpolyjapanesetownbuildings_fbx*.zip"))]
         if len(archives) != 2 or not all(p.exists() for p in archives):
@@ -130,7 +124,7 @@ def main():
     if args.write_back or args.write_back_only:
         shutil.copytree(CLONE / LOCAL, PROJECT / LOCAL, dirs_exist_ok=True)
         shutil.copy2(Path(str(CLONE / LOCAL) + ".meta"), Path(str(PROJECT / LOCAL) + ".meta"))
-        print("Wrote both local comparison scenes, prefabs and converted assets; sources remain excluded from git.", flush=True)
+        print("Wrote both comparison scenes, prefabs and converted assets to the Unity project.", flush=True)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,61 @@
+Sizes (W x D x H in cm, Blender X x Y x Z) and triangle counts
+
+tb_mansion_5f_01                          2105 x  1225 x  1860    14280 tris   Apartment Building 5F (mansion, 3 units wide, balconies front, corridor back)
+tb_mansion_10f_01                         2705 x  1225 x  3310    37144 tris   Apartment Building 10F (mansion, 4 units wide)
+tb_tower_mansion_24f_01                   2400 x  2400 x  8205    27260 tris   Tower Apartment 24F (glass balconies, lobby, crown)
+tb_danchi_5f_01                           4062 x   996 x  1730    28460 tris   Danchi Housing Block 5F (3 stair modules, building number on gable)
+tb_danchi_4f_01                           2712 x   996 x  1454    15732 tris   Danchi Housing Block 4F (2 stair modules)
+tb_wooden_apartment_2f_01                 1235 x   900 x   786     7630 tris   Wooden Apartment 2F (outside steel stair, 6 rooms)
+tb_pencil_building_6f_01                   509 x  1335 x  2195     3454 tris   Pencil Building 6F (narrow, vertical sign)
+tb_tenant_building_7f_01                   809 x  1724 x  2575     6164 tris   Tenant Building 7F (window letters, back steel stair)
+tb_office_building_8f_01                  1612 x  1585 x  3295     7508 tris   Office Building 8F (ribbon windows, entrance canopy)
+tb_shop_house_3f_01                        700 x  1120 x  1210     2772 tris   Shop House 3F (shop + home above, awning)
+tb_kanban_shop_2f_01                       698 x  1130 x   823     2208 tris   Kanban-Style Shop 2F (flat facade old shop)
+tb_warehouse_workshop_01                  1288 x  1720 x   835     4564 tris   Warehouse / Workshop (roll-up shutter, roof vents)
+tb_parking_garage_3f_01                   1601 x  3232 x  1205     1904 tris   Parking Garage 3F (open decks, stair tower, entry barrier)
+tb_house_tile_2f_01                       1020 x   918 x  1050     2952 tris   House 2F – tiled roof
+tb_house_modern_2f_01                      762 x  1046 x   696     1788 tris   House 2F – modern box with solar panels
+tb_danchi_water_tower_01                   990 x   990 x  2700     1888 tris   Danchi Water Tower
+tb_rooftop_billboard_01                    624 x   275 x   480      472 tris   Rooftop Billboard (blank poster, lights)
+tb_rooftop_water_tank_01                   184 x   209 x   315      502 tris   Rooftop Water Tank
+tb_rooftop_ac_rack_01                      413 x   100 x    97      598 tris   Rooftop Air-Conditioner Rack
+tb_bicycle_shelter_01                      600 x   210 x   239      602 tris   Bicycle Shelter with bike racks
+tb_garbage_station_01                      210 x   110 x   114     1542 tris   Garbage Station (lid opens)
+tb_mansion_module_ground_01                602 x  1204 x   365      908 tris   Mansion Module – ground floor bay 6 m
+tb_mansion_module_floor_01                 602 x  1204 x   312      908 tris   Mansion Module – upper floor bay 6 m
+tb_mansion_module_roof_01                  600 x  1202 x   100      144 tris   Mansion Module – roof bay 6 m
+tb_mansion_module_end_l_01                  25 x  1200 x   290      102 tris   Mansion Module – left end wall (upper floor)
+tb_mansion_module_end_r_01                  25 x  1200 x   290      102 tris   Mansion Module – right end wall (upper floor)
+tb_mansion_module_end_l_ground_01           25 x  1200 x   365      102 tris   Mansion Module – left end wall (ground floor)
+tb_mansion_module_end_r_ground_01           25 x  1200 x   365      102 tris   Mansion Module – right end wall (ground floor)
+tb_danchi_module_ground_01                1350 x   996 x   360     2056 tris   Danchi Module – ground floor stair module 13.5 m
+tb_danchi_module_floor_01                 1350 x   927 x   405     1864 tris   Danchi Module – upper floor stair module 13.5 m
+tb_danchi_module_roof_01                  1354 x   904 x   140      120 tris   Danchi Module – roof 13.5 m
+tb_danchi_module_end_l_01                   24 x   900 x   270      114 tris   Danchi Module – left gable (upper floor)
+tb_danchi_module_end_r_01                   24 x   900 x   270      114 tris   Danchi Module – right gable (upper floor)
+tb_danchi_module_end_l_ground_01            24 x   900 x   360      114 tris   Danchi Module – left gable (ground floor)
+tb_danchi_module_end_r_ground_01            24 x   900 x   360      114 tris   Danchi Module – right gable (ground floor)
+
+Colour variants (same size as the base model):
+tb_danchi_5f_01_b                         28460 tris
+tb_danchi_5f_01_c                         28460 tris
+tb_house_modern_2f_01_b                    1788 tris
+tb_house_modern_2f_01_c                    1788 tris
+tb_house_tile_2f_01_b                      2952 tris
+tb_house_tile_2f_01_c                      2952 tris
+tb_kanban_shop_2f_01_b                     2208 tris
+tb_kanban_shop_2f_01_c                     2208 tris
+tb_mansion_10f_01_b                       37144 tris
+tb_mansion_10f_01_c                       37144 tris
+tb_mansion_5f_01_b                        14280 tris
+tb_mansion_5f_01_c                        14280 tris
+tb_office_building_8f_01_b                 7508 tris
+tb_office_building_8f_01_c                 7508 tris
+tb_pencil_building_6f_01_b                 3454 tris
+tb_pencil_building_6f_01_c                 3454 tris
+tb_shop_house_3f_01_b                      2772 tris
+tb_shop_house_3f_01_c                      2772 tris
+tb_tenant_building_7f_01_b                 6164 tris
+tb_tenant_building_7f_01_c                 6164 tris
+tb_wooden_apartment_2f_01_b                7630 tris
+tb_wooden_apartment_2f_01_c                7630 tris
