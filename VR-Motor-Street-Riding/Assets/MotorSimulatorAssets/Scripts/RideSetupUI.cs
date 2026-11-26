@@ -75,7 +75,7 @@ namespace AIT.Riding
             pageRoot = Rect("Controls", panel, new Vector2(0, -40), new Vector2(900, 470));
             Label(panel, session.Display.Mode == RideDisplayMode.VR
                 ? "控制器射線指向按鈕，按扳機選取。左 X 開啟／暫停。"
-                : "滑鼠點選。P 開始／暫停，F2 開啟選單。", new Vector2(0, -345), new Vector2(880, 70), 26);
+                : "騎行時滑鼠轉頭，C 視角回正。\nEsc／P 暫停並釋放游標，F2 開啟選單。", new Vector2(0, -345), new Vector2(880, 70), 26);
             RefreshProfiles();
             Open();
         }
@@ -84,6 +84,7 @@ namespace AIT.Riding
         {
             if (!session || !MenuCanvas) return;
             if (session.Running) { session.Pause("Opened ride menu"); return; }
+            session.Display.ReleaseDesktopPointer();
             startRequested = false;
             RefreshProfiles();
             IsOpen = true; page = 0; pendingDelete = null; anchored = false;
@@ -165,7 +166,9 @@ namespace AIT.Riding
                     session.Settings.inputSource = (RideInputSource)next;
                     session.Emit("settings", "Input: " + session.Settings.inputSource); BuildPage();
                 });
-                Label(pageRoot, "先放開油門與倒退鍵再開始。\n倒退按住：右 B／手把 ○／鍵盤 R；放開即停。", new Vector2(0, -250), new Vector2(850, 85), 25);
+                Label(pageRoot, session.Settings.inputSource == RideInputSource.Keyboard
+                    ? "W 前進；S 煞停後倒退，放開即停（R 也可倒退）。\n開始前先放開 W／S／R。"
+                    : "先放開油門與倒退鍵再開始。\n倒退按住：右 B／手把 ○／鍵盤 R；放開即停。", new Vector2(0, -250), new Vector2(850, 85), 25);
             }
             else if (page == 1)
             {

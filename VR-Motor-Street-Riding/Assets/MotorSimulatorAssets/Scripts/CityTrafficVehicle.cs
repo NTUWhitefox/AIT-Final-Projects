@@ -14,6 +14,8 @@ namespace AIT.Riding
     {
         public RideTestSession session;
         public Transform[] wheels;
+        public Transform steeringAssembly, leaningVisual;
+        public Color brakeEmission = Color.white;
         public Vector3[] pathPoints;
         public float[] pathYaw, pathCurvature;
         public CityTrafficTurn[] turns;
@@ -52,6 +54,8 @@ namespace AIT.Riding
         {
             if (reserved) reserved.Release(this); reserved = null;
             Progress = initialProgress; Speed = SteeringDegrees = 0;
+            if (steeringAssembly) steeringAssembly.localRotation = Quaternion.identity;
+            if (leaningVisual) leaningVisual.localRotation = Quaternion.identity;
             if (distances != null) SetPose(Progress);
         }
         public void Sample(float progress, out Vector3 rearAxle, out float yaw, out float curvature)
@@ -108,11 +112,19 @@ namespace AIT.Riding
             Sample(Progress + .7f, out _, out _, out float curve);
             float requestedSteer = Mathf.Atan(wheelbase * curve) * Mathf.Rad2Deg;
             SteeringDegrees = Mathf.MoveTowards(SteeringDegrees, requestedSteer, 75 * Time.fixedDeltaTime);
+            if (steeringAssembly)
+                steeringAssembly.localRotation = Quaternion.Euler(0, SteeringDegrees, 0);
+            if (leaningVisual)
+            {
+                float bank = -Mathf.Atan2(Speed * Speed * curve, 9.81f) * Mathf.Rad2Deg;
+                leaningVisual.localRotation = Quaternion.Euler(0, 0, Mathf.Clamp(bank, -13, 13));
+            }
             float steeringCurve = Mathf.Tan(SteeringDegrees * Mathf.Deg2Rad) / wheelbase;
             for (int i = 0; i < wheels.Length; i++)
             {
-                float angle = wheels[i].name.Contains("Front") ? Mathf.Atan(wheelbase * steeringCurve / (1 - steeringCurve * wheelX[i])) * Mathf.Rad2Deg : 0;
-                float radiusRatio = Mathf.Sqrt(Mathf.Pow(1 - curve * wheelX[i], 2) + (wheels[i].name.Contains("Front") ? Mathf.Pow(curve * wheelbase, 2) : 0));
+                bool front = wheels[i].name.Contains("Front");
+                float angle = front && !steeringAssembly ? Mathf.Atan(wheelbase * steeringCurve / (1 - steeringCurve * wheelX[i])) * Mathf.Rad2Deg : 0;
+                float radiusRatio = Mathf.Sqrt(Mathf.Pow(1 - curve * wheelX[i], 2) + (front ? Mathf.Pow(curve * wheelbase, 2) : 0));
                 wheelRoll[i] = Mathf.Repeat(wheelRoll[i] + step * radiusRatio / wheelRadius * Mathf.Rad2Deg, 360);
                 wheels[i].localRotation = wheelRest[i] * Quaternion.Euler(0, angle, 0) * Quaternion.Euler(wheelRoll[i], 0, 0);
             }
@@ -152,7 +164,7 @@ namespace AIT.Riding
                 bool right = r.name.Contains("TurnSignal") && r.name.Contains("Right");
                 if (!brake && !left && !right) continue;
                 bool on = brake ? brakingNow : blink && (left && indicator < 0 || right && indicator > 0);
-                lampProperties.Clear(); lampProperties.SetColor("_EmissionColor", on ? Color.white * 3 : Color.black);
+                lampProperties.Clear(); lampProperties.SetColor("_EmissionColor", on ? (brake ? brakeEmission : Color.white) * 3 : Color.black);
                 r.SetPropertyBlock(lampProperties);
             }
         }

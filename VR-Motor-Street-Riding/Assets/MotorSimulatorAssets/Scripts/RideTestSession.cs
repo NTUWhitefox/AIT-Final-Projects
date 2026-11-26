@@ -39,7 +39,7 @@ namespace AIT.Riding
         public Quaternion CalibrationRotation => trackingOrigin.localRotation;
         Vector3 previousPosition;
         float previousYaw, inputSampleTime, oldFixedStep;
-        bool throttleReleased, focus = true, waitingForWorld;
+        bool throttleReleased, focus = true, waitingForWorld, touchingRoadBarrier;
         RideInputSource previousSource;
 
         void Awake()
@@ -58,6 +58,7 @@ namespace AIT.Riding
 
         void Update()
         {
+            input.SignedSpeed = Model.speed;
             CurrentInput = input.ReadInput();
             if(waitingForWorld&&worldStreamer&&worldStreamer.ReadyToStart(Model.position))
             {waitingForWorld=false;Status="附近街區已就緒；請放開油門與倒退鍵，再選開始。";}
@@ -109,6 +110,7 @@ namespace AIT.Riding
                 inputSampleTime > Time.realtimeSinceStartup + 0.05f)
             { Pause("Input sample timed out"); return; }
             Vector3 before = Model.position;
+            float previousSpeed = Model.speed;
             Model.Step(CurrentInput, Settings, StageSpeedCapKph, Time.fixedDeltaTime);
             if(worldStreamer&&!worldStreamer.TravelReady(before,Model.position))
             {
@@ -116,14 +118,34 @@ namespace AIT.Riding
                 Pause("前方街區尚未準備好；請等待後再選開始。");
                 Emit("streaming_wait","Movement held at the last ready position");return;
             }
-            Vector3 delta = Model.position - before;
-            if (roadNetwork && !roadNetwork.IsDrivable(Model.position, .3f))
+            const float vehicleRadius = .3f;
+            if (roadNetwork && !roadNetwork.IsDrivable(Model.position, vehicleRadius))
             {
-                Model.position = before; Model.yaw = previousYaw;
-                Pause("已碰到路緣；可重新開始後低速倒退移車。");
-                Emit("contact", "City road boundary; planar curb contact, not crash dynamics"); return;
+                if (!roadNetwork.HasRoadBarriers)
+                {
+                    Model.position = before; Model.yaw = previousYaw;
+                    Pause("已碰到路緣；可重新開始後低速倒退移車。");
+                    Emit("contact", "City road boundary; planar curb contact, not crash dynamics");
+                    return;
+                }
+                Vector3 proposed = Model.position;
+                Model.position = roadNetwork.StopAtBarrier(before, proposed, vehicleRadius);
+                float attempted = Vector3.Distance(before, proposed);
+                if (attempted > .00001f)
+                {
+                    float travelled = Mathf.Clamp01(Vector3.Distance(before, Model.position) / attempted);
+                    // Slow on impact and block nearly head-on motion. Sustained
+                    // contact may still travel along the boundary.
+                    if (!touchingRoadBarrier || travelled < .12f) Model.speed *= travelled;
+                }
+                Model.acceleration = (Model.speed - previousSpeed) / Time.fixedDeltaTime;
+                Model.lateralAcceleration = Model.speed * Model.yawRate;
+                if (!touchingRoadBarrier) Emit("contact", "City road barrier");
+                touchingRoadBarrier = true;
             }
-            if (delta.sqrMagnitude > 0 && Physics.SphereCast(before + Vector3.up * 0.65f, 0.3f,
+            else touchingRoadBarrier = false;
+            Vector3 delta = Model.position - before;
+            if (delta.sqrMagnitude > 0 && Physics.SphereCast(before + Vector3.up * 0.65f, vehicleRadius,
                 delta.normalized, out _, delta.magnitude + 0.03f, Physics.DefaultRaycastLayers,
                 QueryTriggerInteraction.Ignore))
             {
@@ -202,6 +224,7 @@ namespace AIT.Riding
             StageIndex = Mathf.Clamp(index, 0, course.stages.Length - 1);
             var stage = course.stages[StageIndex];
             Model.Reset(stage.spawnPosition, stage.spawnYaw);
+            touchingRoadBarrier = false;
             previousPosition = Model.position; previousYaw = Model.yaw;
             BodyLean = CameraLean = 0;
             vehicleRoot.SetPositionAndRotation(Model.position, Quaternion.Euler(0, Model.yaw, 0));

@@ -31,6 +31,11 @@ namespace AIT.Riding
         public Vector3[] points;
         public float[] yaw, curvature;
     }
+    [Serializable] public sealed class CityRoadArea
+    {
+        public Rect bounds;
+        public Vector3[] boundary;
+    }
     // The authored source for road geometry, traffic, stop lines and routes.
     [CreateAssetMenu(menuName = "AIT/City Road Network")]
     public sealed class CityRoadNetwork : ScriptableObject
@@ -45,6 +50,9 @@ namespace AIT.Riding
         public CityRoadLink[] links;
         public CityLaneDefinition[] lanes;
         public CityMovementDefinition[] movements;
+        public CityRoadArea[] authoredRoadAreas;
+        public Vector3[] roadBarrierEndpoints;
+        public bool HasRoadBarriers => roadBarrierEndpoints != null && roadBarrierEndpoints.Length >= 2;
         public int[] routeNodes;
         public int[] routeLanes;
         public float HalfRoad => laneWidth * 2 + edgeWidth;
@@ -78,8 +86,57 @@ namespace AIT.Riding
                 if (!PointOnRoad(position + Quaternion.Euler(0, i * 45, 0) * Vector3.forward * radius)) return false;
             return true;
         }
+
+        public Vector3 StopAtBarrier(Vector3 start, Vector3 proposed, float radius)
+        {
+            var contact = LastDrivablePoint(start, proposed, radius);
+            Vector3 tangent = Vector3.zero;
+            float nearest = float.PositiveInfinity;
+            for (int i = 0; i < roadBarrierEndpoints.Length - 1; i += 2)
+            {
+                Vector3 a = roadBarrierEndpoints[i];
+                Vector3 edge = roadBarrierEndpoints[i + 1] - a;
+                float length = edge.magnitude;
+                if (length < .001f) continue;
+                var direction = edge / length;
+                Vector3 closest = a + direction * Mathf.Clamp(Vector3.Dot(contact - a, direction), 0, length);
+                float distance = (contact - closest).sqrMagnitude;
+                if (distance >= nearest) continue;
+                nearest = distance;
+                tangent = direction;
+            }
+            // Keep the motion along the edge. At a corner the projected motion may
+            // meet a second edge, so it must also pass the drivable-area check.
+            var slide = contact + Vector3.Project(proposed - contact, tangent);
+            return LastDrivablePoint(contact, slide, radius);
+        }
+
+        Vector3 LastDrivablePoint(Vector3 start, Vector3 end, float radius)
+        {
+            if (IsDrivable(end, radius)) return end;
+            for (int i = 0; i < 6; i++)
+            {
+                var middle = (start + end) * .5f;
+                if (IsDrivable(middle, radius)) start = middle;
+                else end = middle;
+            }
+            return start;
+        }
+
         bool PointOnRoad(Vector3 position)
         {
+            if (authoredRoadAreas != null && authoredRoadAreas.Length > 0)
+            {
+                var point = new Vector2(position.x, position.z);
+                foreach (var area in authoredRoadAreas)
+                {
+                    var bounds = area.bounds;
+                    if (point.x >= bounds.xMin && point.x <= bounds.xMax &&
+                        point.y >= bounds.yMin && point.y <= bounds.yMax && Inside(position, area.boundary))
+                        return true;
+                }
+                return false;
+            }
             float x = (position.x - origin.x - nodeOffset) / spacing;
             float z = (position.z - origin.z - nodeOffset) / spacing;
             int ix = Mathf.Clamp(Mathf.RoundToInt(x), 0, count - 1), iz = Mathf.Clamp(Mathf.RoundToInt(z), 0, count - 1);

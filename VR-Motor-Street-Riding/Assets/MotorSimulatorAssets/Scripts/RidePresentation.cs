@@ -9,6 +9,7 @@ namespace AIT.Riding
         public TextMesh speedDisplay, pausedDisplay;
         public GameObject pausedPanel;
         public Transform handlebars, frontWheel, rearWheel;
+        [Min(.01f)] public float wheelRadius = .245f;
         public Renderer vignetteRenderer;
         public Shader vignetteShader;
         Material vignetteMaterial;
@@ -42,7 +43,8 @@ namespace AIT.Riding
             }
             float steer = Inspecting ? inspectSteering : session.Model.steeringDegrees;
             if (handlebars) handlebars.localRotation = Quaternion.Euler(0, steer, 0);
-            float rotationSpeed = Inspecting ? (inspectSpinWheels ? 120 : 0) : session.Model.speed / 0.245f * Mathf.Rad2Deg;
+            float radius = wheelRadius > .01f ? wheelRadius : .245f;
+            float rotationSpeed = Inspecting ? (inspectSpinWheels ? 120 : 0) : session.Model.speed / radius * Mathf.Rad2Deg;
             wheelAngle = Mathf.Repeat(wheelAngle + rotationSpeed * Time.deltaTime, 360);
             if (frontWheel) frontWheel.localRotation = Quaternion.Euler(wheelAngle, 0, 0);
             if (rearWheel) rearWheel.localRotation = Quaternion.Euler(wheelAngle, 0, 0);

@@ -1,0 +1,43 @@
+{
+  "junctions": [
+    {"id": "west", "x": 30, "north": 0},
+    {"id": "near", "x": 160, "north": 0},
+    {"id": "far", "x": 211, "north": 0},
+    {"id": "near-north", "x": 155, "north": 77},
+    {"id": "first-right", "x": 207, "north": 82},
+    {"id": "second-right", "x": 213, "north": 137},
+    {"id": "east-block", "x": 322, "north": 151},
+    {"id": "south-block", "x": 316, "north": 84},
+    {"id": "school-corner", "x": 431, "north": 151},
+    {"id": "east-junction", "x": 488, "north": 0},
+    {"id": "east", "x": 674, "north": 0},
+    {"id": "north-west", "x": 79, "north": 70},
+    {"id": "near-end", "x": 145, "north": 164},
+    {"id": "north", "x": 224, "north": 228},
+    {"id": "east-block-north", "x": 339, "north": 221}
+  ],
+  "streets": [
+    {"from": "west", "to": "near", "lanesPerDirection": 2, "width": 14, "sidewalk": 3, "raisedSidewalk": true},
+    {"from": "near", "to": "far", "lanesPerDirection": 2, "width": 14, "sidewalk": 3, "raisedSidewalk": true},
+    {"from": "far", "to": "east-junction", "lanesPerDirection": 2, "width": 14, "sidewalk": 3, "raisedSidewalk": true},
+    {"from": "east-junction", "to": "east", "lanesPerDirection": 2, "width": 14, "sidewalk": 3, "raisedSidewalk": true},
+    {"from": "near", "to": "near-north", "lanesPerDirection": 1, "width": 8, "sidewalk": 1.9},
+    {"from": "far", "to": "first-right", "lanesPerDirection": 1, "width": 8, "sidewalk": 1.9},
+    {"from": "near-north", "to": "first-right", "lanesPerDirection": 1, "width": 7, "sidewalk": 1.7},
+    {"from": "near-north", "to": "near-end", "lanesPerDirection": 1, "width": 7, "sidewalk": 1.7},
+    {"from": "near-north", "to": "north-west", "lanesPerDirection": 1, "width": 6, "sidewalk": 1.5},
+    {"from": "first-right", "to": "second-right", "lanesPerDirection": 1, "width": 8, "sidewalk": 1.9},
+    {"from": "first-right", "to": "south-block", "lanesPerDirection": 1, "width": 7, "sidewalk": 1.8},
+    {"from": "south-block", "to": "east-block", "lanesPerDirection": 1, "width": 7, "sidewalk": 1.8},
+    {"from": "second-right", "to": "east-block", "lanesPerDirection": 1, "width": 7, "sidewalk": 1.8},
+    {"from": "second-right", "to": "north", "lanesPerDirection": 1, "width": 7, "sidewalk": 1.7},
+    {"from": "east-block", "to": "east-block-north", "lanesPerDirection": 1, "width": 6, "sidewalk": 1.5},
+    {"from": "east-block", "to": "school-corner", "lanesPerDirection": 1, "width": 8, "sidewalk": 2},
+    {"from": "school-corner", "to": "east-junction", "lanesPerDirection": 1, "width": 9, "sidewalk": 2, "raisedSidewalk": true, "curved": true, "controlX": 447, "controlNorth": 68}
+  ],
+  "routes": [
+    {"id": "second-left-second-right", "junctions": ["west", "near", "far", "first-right", "second-right", "east-block", "school-corner", "east-junction", "east"]},
+    {"id": "early-left-recovery", "junctions": ["west", "near", "near-north", "first-right", "second-right", "east-block", "school-corner", "east-junction", "east"]},
+    {"id": "early-right-recovery", "junctions": ["west", "near", "far", "first-right", "south-block", "east-block", "school-corner", "east-junction", "east"]}
+  ]
+}

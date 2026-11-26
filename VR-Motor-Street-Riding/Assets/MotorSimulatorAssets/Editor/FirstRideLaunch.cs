@@ -96,7 +96,8 @@ namespace AIT.Riding.Editor
             {
                 GUILayout.Label("Settings are in the in-game menu.", EditorStyles.boldLabel);
                 GUILayout.Label("VR: left X opens the menu; point the controller and pull the trigger.");
-                GUILayout.Label("Desktop: F2 opens the menu; use the mouse.");
+                GUILayout.Label("Desktop: mouse looks around; Esc pauses/releases the cursor.");
+                GUILayout.Label("F2 opens the menu; C resets the view.");
                 return;
             }
             GUILayout.Label("Choose the display for this Play session.", EditorStyles.boldLabel);

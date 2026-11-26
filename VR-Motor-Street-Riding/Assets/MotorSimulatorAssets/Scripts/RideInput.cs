@@ -27,6 +27,9 @@ namespace AIT.Riding
         public RideTestSettings settings;
         public RideInputProvider externalProvider;
         public string DeviceDescription { get; private set; } = "Not sampled";
+        // Session supplies actual signed speed before sampling. Only keyboard S
+        // uses it; physical brake inputs retain their stop-only behaviour.
+        public float SignedSpeed { private get; set; }
         bool wasPause, wasRecenter, wasStage, wasComfort;
         RideInputSource lastSource;
 
@@ -85,8 +88,9 @@ namespace AIT.Riding
                     {
                         f.steering = (k.dKey.isPressed ? 1 : 0) - (k.aKey.isPressed ? 1 : 0);
                         f.throttle = k.wKey.isPressed ? 1 : 0;
-                        f.brake = k.sKey.isPressed ? 1 : 0;
-                        f.reverse = k.rKey.isPressed ? 1 : 0;
+                        bool back = k.sKey.isPressed, forward = k.wKey.isPressed;
+                        f.brake = back && (forward || SignedSpeed > 0) ? 1 : 0;
+                        f.reverse = k.rKey.isPressed || (back && !forward && SignedSpeed <= 0) ? 1 : 0;
                         pause = k.pKey.isPressed;
                         f.stopHeld = k.spaceKey.isPressed;
                         recenter = k.cKey.isPressed;

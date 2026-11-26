@@ -94,7 +94,7 @@ public static class GridCityBuilder
         for (int x = 5; x >= 3; x--) route.Add(n.Index(x, 1));
         n.routeNodes = route.ToArray(); n.routeLanes = route.Select(_ => 1).ToArray();
     }
-    static void BuildMovements(CityRoadNetwork n)
+    public static void BuildMovements(CityRoadNetwork n)
     {
         var movements = new List<CityMovementDefinition>();
         for (int node = 0; node < n.nodes.Length; node++) for (int incoming = 0; incoming < 4; incoming++)
